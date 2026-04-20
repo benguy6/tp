@@ -70,6 +70,10 @@ use the `java -jar UniTasker.jar` command to run the application
 6. It is recommended to use the `add category` command first as tasks can only be added inside a category.
 
 ## Features 
+UniTasker also supports the following command aliases: `a` = `add`, `d` = `delete`,
+`l` = `list`, `m` = `mark`, `u` = `unmark`, `p` = `priority`, `s` = `sort`,
+and `f` = `find`.
+
 ### Add Command: `add`
 
 Adds a new item to the list. The `add` command supports multiple task types: `category`, `todo`, `deadline`, `event`, and `recurring`.
@@ -886,17 +890,21 @@ is located in the other computer.
 
 ## Command Summary
 
+The following aliases are supported in addition to the full command words:
+`a` = `add`, `d` = `delete`, `l` = `list`, `m` = `mark`, `u` = `unmark`,
+`p` = `priority`, `s` = `sort`, `f` = `find`.
+
 | Action      | Format, Examples                                                                                                                                                                                                                                                                                                     | 
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | help        | `help`                                                                                                                                                                                                                                                                                                               |
-| add         | `add category [DESC]`, `add todo [CATEGORYINDEX] [DESCRIPTION] /p [PRIORITYVALUE]`, <br/> `add deadline [CATEGORYINDEX] [DESCRIPTION] /by [DATE TIME]`, <br/> `add event [CATEGORYINDEX] [DESCRIPTION] /from [START] /to [END]`, <br/> `add recurring [CATEGORYINDEX] [DESCRIPTION] /from [DAY TIME] /to [DAY TIME]` |
-| delete      | `delete [KEYWORD] [CATEGORYINDEX] [TASKINDEX]`, `delete [KEYWORD] [CATEGORYINDEX] all`                                                                                                                                                                                                                               |
-| list        | `list category [CATEGORYINDEX]`, `list todo`, `list deadline`, `list limit`, `list range [START] [END] [FLAG]`, <br/> `list event [TYPE]`, `list recurring`, `list occurrence [CATEGORYINDEX] [UIINDEX]`                                                                                                             |
-| mark/unmark | `mark [TASKTYPE] [CATEGORYINDEX] [TASKINDEX]`, `unmark [TASKTYPE] [CATEGORYINDEX] [TASKINDEX]`                                                                                                                                                                                                                       |
+| add / a     | `add category [DESC]`, `add todo [CATEGORYINDEX] [DESCRIPTION] /p [PRIORITYVALUE]`, <br/> `add deadline [CATEGORYINDEX] [DESCRIPTION] /by [DATE TIME]`, <br/> `add event [CATEGORYINDEX] [DESCRIPTION] /from [START] /to [END]`, <br/> `add recurring [CATEGORYINDEX] [DESCRIPTION] /from [DAY TIME] /to [DAY TIME]` |
+| delete / d  | `delete [KEYWORD] [CATEGORYINDEX] [TASKINDEX]`, `delete [KEYWORD] [CATEGORYINDEX] all`                                                                                                                                                                                                                               |
+| list / l    | `list category [CATEGORYINDEX]`, `list todo`, `list deadline`, `list limit`, `list range [START] [END] [FLAG]`, <br/> `list event [TYPE]`, `list recurring`, `list occurrence [CATEGORYINDEX] [UIINDEX]`                                                                                                             |
+| mark / m, unmark / u | `mark [TASKTYPE] [CATEGORYINDEX] [TASKINDEX]`, `unmark [TASKTYPE] [CATEGORYINDEX] [TASKINDEX]`                                                                                                                                                                                                              |
 | reorder     | `reorder category [FROMINDEX] [TOINDEX]`, `reorder todo [CATEGORYINDEX] [FROMINDEX] [TOINDEX]`                                                                                                                                                                                                                       |
-| priority    | `priority todo [CATEGORYINDEX] [TODOINDEX] [PRIORITYVALUE]`                                                                                                                                                                                                                                                          |
-| sort        | `sort todo [CATEGORYINDEX]`                                                                                                                                                                                                                                                                                          |
-| find        | `find [SUBSTRING]`                                                                                                                                                                                                                                                                                                   |
+| priority / p | `priority todo [CATEGORYINDEX] [TODOINDEX] [PRIORITYVALUE]`                                                                                                                                                                                                                                                         |
+| sort / s    | `sort todo [CATEGORYINDEX]`                                                                                                                                                                                                                                                                                          |
+| find / f    | `find [SUBSTRING]`                                                                                                                                                                                                                                                                                                   |
 | limit       | `limit [KEYWORD] [INT]`                                                                                                                                                                                                                                                                                              |
 | reminder    | `reminder`                                                                                                                                                                                                                                                                                                           |
 | course      | `course add [COURSE_CODE]`, `course delete [COURSE_CODE]`, `course list`, <br/> `course view [COURSE_CODE]`, `course add-assessment [COURSE_CODE] /n [NAME] /w [WEIGHTAGE] /ms [MAX_SCORE]`, <br/> `course score [COURSE_CODE] /n [NAME] /s [SCORE]`, `course delete-assessment [COURSE_CODE] /n [NAME]`             |                                                                                                           |

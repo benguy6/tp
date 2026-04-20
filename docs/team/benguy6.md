@@ -41,11 +41,20 @@ General contributions:
 - Added Course Tracker architecture and design overview, focusing on the model and storage structure
 - Added the course class diagram and sequence diagram content
 - Documented the design considerations for course persistence and grade calculation
+- Detailed weighted score calculation algorithm with formula: (scoreObtained / maxScore) * weightage, with concrete examples showing Finals (40%, 85/100) contributes 34 points
+- Documented file persistence format and sentinel value (-1.0) for ungraded assessments, enabling robust multi-course storage
+- Explained validation layer architecture: CourseManager validates inputs, Assessment validates during recordScore(), two-tier defensive approach
+- Justified design constants: MAX_WEIGHTAGE=100% (prevents impossible grading), MAX_ALLOWED_SCORE=10,000 (flexible scoring), NOT_GRADED=-1.0 (explicit ungraded state)
+- Documented robustness features: graceful handling of missing/corrupted files, atomic file overwrites for crash resilience, defensive directory creation, malformed line skipping
 
 **User Guide Contributions**
-- Documented the Course Tracker commands in the User Guide
-- Documented the help feature and command summary content
+- Documented the Course Tracker commands in the User Guide with comprehensive examples
+- Documented the help feature and command summary content, including all 8 command aliases (a, d, l, m, u, p, s, f)
 - Updated documentation to reflect aliases and corrected command formats where needed
+- Added Course Tracker examples section explaining weighted grade calculation: Finals (40%, 85/100) + Midterm (20%, 20/25) + Lab (15%, ungraded) = 83% current grade based only on graded work
+- Documented weightage constraints with rejected configuration example: Finals (40%) + Midterm (60%) + Lab (15%) exceeds 100% limit
+- Documented scoring constraints: max score range 0-10,000, scores must be non-negative and not exceed assessment maximum
+- Explained course completion status checking and distinction between interim current grade vs. final grade when fully graded
 
 **Review/Mentoring Contributions**
 - Reviewed PRs and provided feedback
